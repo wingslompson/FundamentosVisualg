@@ -1,0 +1,77 @@
+Criar um jogo de batalha naval com uma matriz de 6x6 
+----------------------------------------------------
+Algoritmo "BatalhaNaval"
+
+Var
+   mat, mat2 : vetor [1..6, 1..6] de inteiro
+   l, c , j, p : inteiro
+Inicio
+   para l de 1 ate 6 faca
+      para c de 1 ate 6 faca
+         mat[l,c] <- 8
+
+      fimpara
+   fimpara
+   para l de 1 ate 6 faca
+      para c de 1 ate 6 faca
+         escreva(mat[l,c], "|")
+      fimpara
+      escreval("")
+   fimpara
+
+   escreval("")
+   escreval("")
+   escreval("")
+
+   mat2 [1,1] <- 1
+   mat2 [1,5] <- 1
+   mat2 [2,2] <- 1
+   mat2 [2,4] <- 2
+   mat2 [2,5] <- 2
+   mat2 [4,1] <- 1
+   mat2 [4,4] <- 3
+   mat2 [4,5] <- 3
+   mat2 [4,6] <- 3
+   mat2 [5,3] <- 2
+   mat2 [6,1] <- 1
+   mat2 [6,3] <- 2
+   mat2 [6,6] <- 1
+
+   para j de 1 ate 8 faca
+      escreval("Digite sua jogada")
+      escreval("Linha")
+      leia(l)
+      escreval("Coluna")
+      leia(c)
+      se mat2[l,c] = 0 então
+         p <- p+0
+         mat[l,c] <- 0
+      senao
+         se mat2[l,c] = 1 entao
+            p <- p+1
+            mat[l,c] <- 1
+         senao
+            se mat2[l,c] = 2 entao
+               p <-p+2
+               mat[l,c] <- 2
+            senao
+               se mat2[l,c] = 3 entao
+                  p <- p+3
+                  mat[l,c] <- 3
+               fimse
+            fimse
+         fimse
+      fimse
+      para l de 1 ate 6 faca
+         para c de 1 ate 6 faca
+
+            escreva ("|", mat[l,c],"|")
+         fimpara
+         escreval("")
+      fimpara
+   fimpara
+   escreval("você fez ", p, " pontos ")
+
+
+
+fimalgoritmo
